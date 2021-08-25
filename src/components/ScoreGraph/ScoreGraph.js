@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
 import './ScoreGraph.css'
 
