@@ -57,7 +57,7 @@ export default function Dashboard() {
                 <ActivityGraph data={userActivity.sessions} />
                 <AverageSessionGraph data={userAverageSession} />
                 <PerformanceGraph data={userPerfomance} />
-                <ScoreGraph data={userInfo.todayScore} />
+                <ScoreGraph value={userInfo.todayScore} />
                 <NutrimentCard image={caloriesIcon} title="Calories" value={userInfo.keyData.calorieCount} unit="kCal" />
                 <NutrimentCard image={proteinIcon} title="Proteines" value={userInfo.keyData.proteinCount} unit="g" />
                 <NutrimentCard image={carbsIcon} title="Glucides" value={userInfo.keyData.carbohydrateCount} unit="g" />
