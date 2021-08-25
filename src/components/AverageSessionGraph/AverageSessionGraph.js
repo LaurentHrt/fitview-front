@@ -1,4 +1,4 @@
-import { LineChart, Line, XAxis, Tooltip } from 'recharts'
+import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts'
 import './AverageSessionGraph.css'
 
 export default function AverageSessionGraph({ data }) {
@@ -9,20 +9,20 @@ export default function AverageSessionGraph({ data }) {
 	}))
 
 	return (
-		<LineChart
-			width={500}
-			height={300}
-			data={data}
-			margin={{
-				top: 5,
-				right: 30,
-				left: 20,
-				bottom: 5,
-			}}
-		>
-			<XAxis dataKey="day" />
-			<Tooltip />
-			<Line type="monotone" dataKey="sessionLength" stroke="#FF0000" />
-		</LineChart>
+		<ResponsiveContainer width={'100%'} height={260}>
+			<LineChart
+				data={data}
+				margin={{
+					top: 5,
+					right: 30,
+					left: 20,
+					bottom: 5,
+				}}
+			>
+				<XAxis dataKey="day" />
+				<Tooltip />
+				<Line type="monotone" dataKey="sessionLength" stroke="#FF0000" />
+			</LineChart>
+		</ResponsiveContainer>
 	)
 }

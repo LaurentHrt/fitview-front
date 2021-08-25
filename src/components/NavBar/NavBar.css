@@ -1,6 +1,4 @@
-footer {
-	position: fixed;
-	top: 0;
+.navBar {
 	background-color: #020203;
 	width: 92px;
 	height: 100vh;
@@ -8,16 +6,15 @@ footer {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	z-index: -999;
 }
 
-footer .iconsContainer {
+.navBar .iconsContainer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	row-gap: 20px;
 }
 
-footer .copyright {
+.navBar .copyright {
 	justify-self: end;
 }

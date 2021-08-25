@@ -1,6 +1,6 @@
 import Header from '../components/Header/Header'
 import Welcome from '../components/Welcome/Welcome'
-import Footer from '../components/Footer/Footer'
+import NavBar from '../components/NavBar/NavBar'
 import NutrimentCard from '../components/NutrimentCard/NutrimentCard'
 import ActivityGraph from '../components/ActivityGraph/ActivityGraph'
 import AverageSessionGraph from '../components/AverageSessionGraph/AverageSessionGraph'
@@ -61,37 +61,49 @@ export default function Dashboard() {
 		<div className="wrapper">
 			<Header />
 			<main>
-				<Welcome userName={userInfo.userInfos.firstName} />
-				<ActivityGraph data={userActivity.sessions} />
-				<AverageSessionGraph data={userAverageSession.sessions} />
-				<PerformanceGraph data={userPerfomance} />
-				<ScoreGraph value={userInfo.todayScore} />
-				<NutrimentCard
-					image={caloriesIcon}
-					title="Calories"
-					value={userInfo.keyData.calorieCount}
-					unit="kCal"
-				/>
-				<NutrimentCard
-					image={proteinIcon}
-					title="Proteines"
-					value={userInfo.keyData.proteinCount}
-					unit="g"
-				/>
-				<NutrimentCard
-					image={carbsIcon}
-					title="Glucides"
-					value={userInfo.keyData.carbohydrateCount}
-					unit="g"
-				/>
-				<NutrimentCard
-					image={fatIcon}
-					title="Lipides"
-					value={userInfo.keyData.lipidCount}
-					unit="g"
-				/>
+				<NavBar />
+				<div className="container">
+					<div className="title">
+						<Welcome userName={userInfo.userInfos.firstName} />
+					</div>
+					<div className="activity">
+						<ActivityGraph data={userActivity.sessions} />
+					</div>
+					<div className="average">
+						<AverageSessionGraph data={userAverageSession.sessions} />
+					</div>
+					<div className="performance">
+						<PerformanceGraph data={userPerfomance} />
+					</div>
+					<div className="score">
+						<ScoreGraph value={userInfo.todayScore} />
+					</div>
+					<NutrimentCard
+						image={caloriesIcon}
+						title="Calories"
+						value={userInfo.keyData.calorieCount}
+						unit="kCal"
+					/>
+					<NutrimentCard
+						image={proteinIcon}
+						title="Proteines"
+						value={userInfo.keyData.proteinCount}
+						unit="g"
+					/>
+					<NutrimentCard
+						image={carbsIcon}
+						title="Glucides"
+						value={userInfo.keyData.carbohydrateCount}
+						unit="g"
+					/>
+					<NutrimentCard
+						image={fatIcon}
+						title="Lipides"
+						value={userInfo.keyData.lipidCount}
+						unit="g"
+					/>
+				</div>
 			</main>
-			<Footer />
 		</div>
 	)
 }

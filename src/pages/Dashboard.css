@@ -1,3 +1,39 @@
 main {
-	padding-left: 120px;
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
+.container {
+	margin: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	gap: 20px 20px;
+	grid-auto-flow: row;
+	grid-template-areas:
+		'title title title title'
+		'activity activity activity .'
+		'activity activity activity .'
+		'average performance score .'
+		'average performance score .';
+}
+
+.title {
+	grid-area: title;
+}
+
+.activity {
+	grid-area: activity;
+}
+
+.average {
+	grid-area: average;
+}
+
+.performance {
+	grid-area: performance;
+}
+
+.score {
+	grid-area: score;
 }
