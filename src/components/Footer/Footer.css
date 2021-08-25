@@ -1,0 +1,23 @@
+footer {
+	position: fixed;
+	top: 0;
+	background-color: #020203;
+	width: 92px;
+	height: 100vh;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	z-index: -999;
+}
+
+footer .iconsContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 20px;
+}
+
+footer .copyright {
+	justify-self: end;
+}
