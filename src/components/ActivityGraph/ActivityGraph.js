@@ -8,27 +8,66 @@ import {
 	Legend,
 	ResponsiveContainer,
 } from 'recharts'
+import './ActivityGraph.css'
+
+const textStyle = { color: '#74798C', fontWeight: 'bold', fontSize: '14px' }
+const renderLegendStyle = (value) => {
+	return <span style={textStyle}>{value}</span>
+}
 
 export default function ActivityGraph({ data }) {
 	return (
-		<ResponsiveContainer width={'100%'} height={320}>
+		<div className="activityGraph">
+			<div className="activityGraph__title">Activité quotidienne</div>
 			<BarChart
 				data={data}
-				margin={{
-					top: 5,
-					right: 30,
-					left: 20,
-					bottom: 5,
-				}}
+				barSize={10}
+				width={800}
+				height={320}
+				style={textStyle}
 			>
-				<CartesianGrid strokeDasharray="3 3" />
-				<XAxis dataKey="day" />
-				<YAxis />
-				<Tooltip />
-				<Legend />
-				<Bar dataKey="calories" fill="#FF0000" />
-				<Bar dataKey="kilogram" fill="#000000" />
+				<Legend
+					align="right"
+					verticalAlign="top"
+					height={80}
+					formatter={renderLegendStyle}
+				/>
+				<CartesianGrid strokeDasharray="2 3" vertical={false} />
+				<XAxis
+					dataKey="day"
+					tickLine={false}
+					tickSize={20}
+					padding={{ left: -15, right: -20 }}
+				/>
+				<YAxis
+					orientation="right"
+					axisLine={false}
+					tickLine={false}
+					tickSize={20}
+				/>
+				<Tooltip
+					contentStyle={{
+						backgroundColor: '#E60000',
+					}}
+					itemStyle={{
+						color: 'white',
+					}}
+					formatter={(value, name, unit) => [value, unit]}
+					labelStyle={{ display: 'none' }}
+				/>
+				<Bar
+					dataKey="kilogram"
+					fill="#000000"
+					unit="Kg"
+					name="Poids (kg)"
+				/>
+				<Bar
+					dataKey="calories"
+					fill="#FF0000"
+					unit="kCal"
+					name="Calories brûlées (kCal)"
+				/>
 			</BarChart>
-		</ResponsiveContainer>
+		</div>
 	)
 }

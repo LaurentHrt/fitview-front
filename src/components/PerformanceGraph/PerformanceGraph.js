@@ -5,15 +5,17 @@ import {
 	PolarAngleAxis,
 	ResponsiveContainer,
 } from 'recharts'
+import './PerformanceGraph.css'
 
 export default function PerformanceGraph({ data: { data, kind } }) {
 	data = data.map((entry) => ({ value: entry.value, kind: kind[entry.kind] }))
 
 	return data.length > 0 ? (
-		<ResponsiveContainer width={'100%'} height={260}>
-			<RadarChart outerRadius={90} data={data}>
+		<div className="performanceGraph">
+			<RadarChart outerRadius={90} data={data} width={260} height={260}>
 				<PolarGrid />
-				<PolarAngleAxis dataKey="kind" />
+				<PolarAngleAxis dataKey="kind" axisLine={false} />
+
 				<Radar
 					dataKey="value"
 					stroke="#FF0000"
@@ -21,6 +23,6 @@ export default function PerformanceGraph({ data: { data, kind } }) {
 					fillOpacity={0.6}
 				/>
 			</RadarChart>
-		</ResponsiveContainer>
+		</div>
 	) : null
 }

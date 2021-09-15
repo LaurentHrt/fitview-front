@@ -21,7 +21,9 @@ export default function NavBar() {
 					<img src={iconDumpbell} alt="Icone Dumpbell" />
 				</a>
 			</div>
-			<p className="copyright">Copyright, SportSee 2020</p>
+			<div>
+				<p className="copyright">Copyright, SportSee 2020</p>
+			</div>
 		</div>
 	)
 }

@@ -17,4 +17,8 @@
 
 .navBar .copyright {
 	justify-self: end;
+	writing-mode: vertical-lr;
+	margin: auto;
+	margin-top: 50px;
+	transform: rotate(180deg);
 }

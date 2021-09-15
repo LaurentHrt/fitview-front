@@ -1,9 +1,9 @@
-main {
+/* main {
 	display: grid;
 	grid-template-columns: auto auto;
-}
+} */
 
-.container {
+/* .container {
 	margin: 20px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -36,4 +36,4 @@ main {
 
 .score {
 	grid-area: score;
-}
+} */

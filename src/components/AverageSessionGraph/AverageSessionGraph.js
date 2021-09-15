@@ -1,5 +1,18 @@
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts'
+import {
+	LineChart,
+	Line,
+	XAxis,
+	Tooltip,
+	ResponsiveContainer,
+	Legend,
+} from 'recharts'
 import './AverageSessionGraph.css'
+
+const axisTextStyle = { fontWeight: 'bold', fontSize: '12px' }
+const tooltipTextStyle = { color: 'black', fontWeight: 'bold', fontSize: '8px' }
+const renderTooltipStyle = (value) => {
+	return <span style={tooltipTextStyle}>{value}</span>
+}
 
 export default function AverageSessionGraph({ data }) {
 	const days = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' }
@@ -9,20 +22,38 @@ export default function AverageSessionGraph({ data }) {
 	}))
 
 	return (
-		<ResponsiveContainer width={'100%'} height={260}>
+		<div className="sessionGraph">
+			<div className="sessionGraph__title">
+				Durée moyenne des sessions
+			</div>
 			<LineChart
 				data={data}
 				margin={{
-					top: 5,
-					right: 30,
-					left: 20,
+					top: 50,
+					right: 15,
+					left: 15,
 					bottom: 5,
 				}}
+				width={260}
+				height={260}
+				style={axisTextStyle}
 			>
-				<XAxis dataKey="day" />
-				<Tooltip />
-				<Line type="monotone" dataKey="sessionLength" stroke="#FF0000" />
+				<XAxis dataKey="day" tickLine={false} axisLine={false} />
+				<Tooltip
+					itemStyle={{
+						color: 'black',
+					}}
+					formatter={(value, name, unit) => [value, unit]}
+					labelStyle={{ display: 'none' }}
+				/>
+				<Line
+					type="monotoneX"
+					dataKey="sessionLength"
+					stroke="white"
+					unit="min"
+					dot={false}
+				/>
 			</LineChart>
-		</ResponsiveContainer>
+		</div>
 	)
 }

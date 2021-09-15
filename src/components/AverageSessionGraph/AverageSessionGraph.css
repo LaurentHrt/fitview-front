@@ -1,0 +1,13 @@
+.sessionGraph {
+	background-color: red;
+	width: fit-content;
+	border-radius: 10px;
+	color: white;
+}
+
+.sessionGraph__title {
+	position: absolute;
+	font-weight: bold;
+	font-size: 15px;
+	margin: 20px;
+}

@@ -1,0 +1,11 @@
+.activityGraph {
+	background-color: #fbfbfb;
+	padding: 20px;
+	width: fit-content;
+	border-radius: 10px;
+}
+
+.activityGraph__title {
+	position: absolute;
+	font-weight: bold;
+}
