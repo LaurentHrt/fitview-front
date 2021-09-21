@@ -1,25 +1,19 @@
-/* main {
-	display: grid;
-	grid-template-columns: auto auto;
-} */
+main {
+	margin-left: 125px;
+	margin-right: 20px;
+}
 
-/* .container {
-	margin: 20px;
+.container {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1.4fr 0.6fr 1fr;
 	gap: 20px 20px;
 	grid-auto-flow: row;
 	grid-template-areas:
-		'title title title title'
-		'activity activity activity .'
-		'activity activity activity .'
-		'average performance score .'
-		'average performance score .';
-}
-
-.title {
-	grid-area: title;
+		'activity activity activity'
+		'activity activity activity'
+		'average performance score'
+		'average performance score';
 }
 
 .activity {
@@ -36,4 +30,16 @@
 
 .score {
 	grid-area: score;
-} */
+}
+
+.graphContainer {
+	display: flex;
+	flex-direction: row;
+	gap: 50px;
+}
+
+.cardsContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}

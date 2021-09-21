@@ -62,44 +62,55 @@ export default function Dashboard() {
 	return (
 		<div className="wrapper">
 			<Header />
+			<NavBar />
 			<main>
-				<NavBar />
-
-				<Welcome userName={userInfo.userInfos.firstName} />
-
-				<ActivityGraph data={userActivity.sessions} />
-
-				<AverageSessionGraph data={userAverageSession.sessions} />
-
-				<PerformanceGraph data={userPerfomance} />
-
-				<ScoreGraph value={userInfo.todayScore} />
-
-				<NutrimentCard
-					image={caloriesIcon}
-					title="Calories"
-					value={userInfo.keyData.calorieCount}
-					unit="kCal"
-				/>
-				<NutrimentCard
-					image={proteinIcon}
-					title="Proteines"
-					value={userInfo.keyData.proteinCount}
-					unit="g"
-				/>
-				<NutrimentCard
-					image={carbsIcon}
-					title="Glucides"
-					value={userInfo.keyData.carbohydrateCount}
-					unit="g"
-				/>
-				<NutrimentCard
-					image={fatIcon}
-					title="Lipides"
-					value={userInfo.keyData.lipidCount}
-					unit="g"
-				/>
-				{/* </div> */}
+				<div>
+					<Welcome userName={userInfo.userInfos.firstName} />
+				</div>
+				<div class="graphContainer">
+					<div class="container">
+						<div class="activity">
+							<ActivityGraph data={userActivity.sessions} />
+						</div>
+						<div class="average">
+							<AverageSessionGraph
+								data={userAverageSession.sessions}
+							/>
+						</div>
+						<div class="performance">
+							<PerformanceGraph data={userPerfomance} />
+						</div>
+						<div class="score">
+							<ScoreGraph value={userInfo.todayScore} />
+						</div>
+					</div>
+					<div class="cardsContainer">
+						<NutrimentCard
+							image={caloriesIcon}
+							title="Calories"
+							value={userInfo.keyData.calorieCount}
+							unit="kCal"
+						/>
+						<NutrimentCard
+							image={proteinIcon}
+							title="Proteines"
+							value={userInfo.keyData.proteinCount}
+							unit="g"
+						/>
+						<NutrimentCard
+							image={carbsIcon}
+							title="Glucides"
+							value={userInfo.keyData.carbohydrateCount}
+							unit="g"
+						/>
+						<NutrimentCard
+							image={fatIcon}
+							title="Lipides"
+							value={userInfo.keyData.lipidCount}
+							unit="g"
+						/>
+					</div>
+				</div>
 			</main>
 		</div>
 	)
