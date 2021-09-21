@@ -5,7 +5,7 @@ main {
 
 .container {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 260px 260px 260px;
 	grid-template-rows: 1fr 1.4fr 0.6fr 1fr;
 	gap: 20px 20px;
 	grid-auto-flow: row;
@@ -42,4 +42,14 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: 50px;
+}
+
+@media screen and (max-width: 1300px) {
+	.graphContainer {
+		flex-direction: column;
+	}
+	.cardsContainer {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
 }
