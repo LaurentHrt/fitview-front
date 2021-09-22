@@ -15,7 +15,7 @@ import UserService from '../service/user.service'
 import './Dashboard.css'
 
 export default function Dashboard() {
-	const userId = 12
+	const userId = 18
 	const userInfoTemplate = {
 		userInfos: {
 			firstName: '',
@@ -51,12 +51,15 @@ export default function Dashboard() {
 		userService
 			.getUserActivity(userId)
 			.then((data) => updateUserActivity(data))
+			.catch((e) => console.log(e))
 		userService
 			.getUserAverageSession(userId)
 			.then((data) => updateUserAverageSession(data))
+			.catch((e) => console.log(e))
 		userService
 			.getUserPerformance(userId)
 			.then((data) => updateUserPerfomance(data))
+			.catch((e) => console.log(e))
 	}
 
 	return (
