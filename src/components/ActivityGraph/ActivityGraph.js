@@ -8,6 +8,7 @@ import {
 	Legend,
 } from 'recharts'
 import './ActivityGraph.css'
+import PropTypes from 'prop-types'
 
 const textStyle = { color: '#74798C', fontWeight: 'bold', fontSize: '14px' }
 const renderLegendStyle = (value) => {
@@ -69,4 +70,14 @@ export default function ActivityGraph({ data }) {
 			</BarChart>
 		</div>
 	)
+}
+
+ActivityGraph.propTypes = {
+	data: PropTypes.arrayOf(
+		PropTypes.shape({
+			day: PropTypes.string.isRequired,
+			kilogram: PropTypes.number.isRequired,
+			calories: PropTypes.number.isRequired,
+		})
+	).isRequired,
 }

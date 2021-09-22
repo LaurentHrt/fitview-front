@@ -1,5 +1,6 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts'
 import './PerformanceGraph.css'
+import PropTypes from 'prop-types'
 
 export default function PerformanceGraph({ data: { data, kind } }) {
 	data = data.map((entry) => ({ value: entry.value, kind: kind[entry.kind] }))
@@ -22,4 +23,16 @@ export default function PerformanceGraph({ data: { data, kind } }) {
 			</RadarChart>
 		</div>
 	) : null
+}
+
+PerformanceGraph.propTypes = {
+	data: PropTypes.shape({
+		data: PropTypes.arrayOf(
+			PropTypes.shape({
+				value: PropTypes.number.isRequired,
+				kind: PropTypes.number.isRequired,
+			})
+		).isRequired,
+		kind: PropTypes.object.isRequired,
+	}),
 }

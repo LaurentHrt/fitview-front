@@ -1,5 +1,6 @@
 import { LineChart, Line, XAxis, Tooltip } from 'recharts'
 import './AverageSessionGraph.css'
+import PropTypes from 'prop-types'
 
 const axisTextStyle = { fontWeight: 'bold', fontSize: '12px' }
 
@@ -51,4 +52,13 @@ export default function AverageSessionGraph({ data }) {
 			</LineChart>
 		</div>
 	)
+}
+
+AverageSessionGraph.propTypes = {
+	data: PropTypes.arrayOf(
+		PropTypes.shape({
+			day: PropTypes.number.isRequired,
+			sessionLength: PropTypes.number.isRequired,
+		})
+	).isRequired,
 }
