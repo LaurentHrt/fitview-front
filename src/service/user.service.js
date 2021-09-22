@@ -1,5 +1,5 @@
 import { Activity } from '../models/Activity'
-const linkToBackend = 'http://localhost:3000/'
+const linkToBackend = `http://${process.env.REACT_APP_API}:${process.env.REACT_APP_PORT}/`
 
 export default class UserService {
 	async getUserInfo(userId) {
