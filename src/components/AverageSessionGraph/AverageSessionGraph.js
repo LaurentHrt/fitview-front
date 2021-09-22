@@ -1,18 +1,7 @@
-import {
-	LineChart,
-	Line,
-	XAxis,
-	Tooltip,
-	ResponsiveContainer,
-	Legend,
-} from 'recharts'
+import { LineChart, Line, XAxis, Tooltip } from 'recharts'
 import './AverageSessionGraph.css'
 
 const axisTextStyle = { fontWeight: 'bold', fontSize: '12px' }
-const tooltipTextStyle = { color: 'black', fontWeight: 'bold', fontSize: '8px' }
-const renderTooltipStyle = (value) => {
-	return <span style={tooltipTextStyle}>{value}</span>
-}
 
 export default function AverageSessionGraph({ data }) {
 	const days = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' }
@@ -38,7 +27,12 @@ export default function AverageSessionGraph({ data }) {
 				height={260}
 				style={axisTextStyle}
 			>
-				<XAxis dataKey="day" tickLine={false} axisLine={false} />
+				<XAxis
+					dataKey="day"
+					tickLine={false}
+					axisLine={false}
+					tick={{ fill: '#FFFFFF' }}
+				/>
 				<Tooltip
 					itemStyle={{
 						color: 'black',

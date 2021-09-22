@@ -5,7 +5,6 @@ const COLORS = ['#FF0000', '#F8F8F8']
 
 export default function ScoreGraph({ value }) {
 	const data = [{ value: value }, { value: 1 - value }]
-	console.log(data[0].value)
 	return (
 		<div className="scoreGraph">
 			<div className="scoreGraph__title">Score</div>

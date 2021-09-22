@@ -1,10 +1,4 @@
-import {
-	Radar,
-	RadarChart,
-	PolarGrid,
-	PolarAngleAxis,
-	ResponsiveContainer,
-} from 'recharts'
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts'
 import './PerformanceGraph.css'
 
 export default function PerformanceGraph({ data: { data, kind } }) {
@@ -14,7 +8,10 @@ export default function PerformanceGraph({ data: { data, kind } }) {
 		<div className="performanceGraph">
 			<RadarChart outerRadius={90} data={data} width={260} height={260}>
 				<PolarGrid />
-				<PolarAngleAxis dataKey="kind" axisLine={false} />
+				<PolarAngleAxis
+					dataKey="kind"
+					tick={{ fill: '#FFFFFF', fontSize: 12 }}
+				/>
 
 				<Radar
 					dataKey="value"

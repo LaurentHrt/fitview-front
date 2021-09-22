@@ -67,24 +67,24 @@ export default function Dashboard() {
 				<div>
 					<Welcome userName={userInfo.userInfos.firstName} />
 				</div>
-				<div class="graphContainer">
-					<div class="container">
-						<div class="activity">
+				<div className="graphContainer">
+					<div className="container">
+						<div className="activity">
 							<ActivityGraph data={userActivity.sessions} />
 						</div>
-						<div class="average">
+						<div className="average">
 							<AverageSessionGraph
 								data={userAverageSession.sessions}
 							/>
 						</div>
-						<div class="performance">
+						<div className="performance">
 							<PerformanceGraph data={userPerfomance} />
 						</div>
-						<div class="score">
+						<div className="score">
 							<ScoreGraph value={userInfo.todayScore} />
 						</div>
 					</div>
-					<div class="cardsContainer">
+					<div className="cardsContainer">
 						<NutrimentCard
 							image={caloriesIcon}
 							title="Calories"
