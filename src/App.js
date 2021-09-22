@@ -1,11 +1,10 @@
 import './App.css';
-import Test from './components/Test'
+import Dashboard from './pages/Dashboard'
 
 function App() {
 
   return (
-    <Test />
-
+    <Dashboard />
   )
 }
 

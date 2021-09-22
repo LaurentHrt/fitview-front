@@ -1,0 +1,25 @@
+.scoreGraph {
+	background-color: #fbfbfb;
+}
+
+.scoreGraph__title {
+	font-weight: bold;
+	position: absolute;
+	margin: 20px;
+	color: #20253a;
+}
+
+.scoreGraph__text {
+	text-align: center;
+	width: 60px;
+	position: absolute;
+	margin: 100px;
+	color: #74798c;
+	font-weight: bold;
+}
+
+.scoreGraph__text .score {
+	font-size: 26px;
+	font-weight: bold;
+	color: #282d30;
+}

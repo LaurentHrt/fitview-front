@@ -1,0 +1,26 @@
+.navBar {
+	background-color: #020203;
+	width: 92px;
+	height: 100vh;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: fixed;
+	inset: 0;
+}
+
+.navBar .iconsContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 20px;
+}
+
+.navBar .copyright {
+	justify-self: end;
+	writing-mode: vertical-lr;
+	margin: auto;
+	margin-top: 50px;
+	transform: rotate(180deg);
+}
