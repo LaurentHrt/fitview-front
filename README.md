@@ -4,8 +4,10 @@
 
 This repo contains all the source code to run the sports analytics dashboard SportSee.
 
-## Prerequisite
+## Prerequisites
 
+-   [NodeJS (**version 12.18**)](https://nodejs.org/en/)
+-   [Yarn](https://yarnpkg.com/)
 -   Backend API up and running. Follow the installation instructions here : [P12-backend](https://github.com/LaurentHrt/P12-backend)
 
 ## Installation
