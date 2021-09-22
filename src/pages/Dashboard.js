@@ -15,7 +15,7 @@ import UserService from '../service/user.service'
 import './Dashboard.css'
 
 export default function Dashboard() {
-	const userId = 18
+	const userId = process.env.REACT_APP_USERID
 	const userInfoTemplate = {
 		userInfos: {
 			firstName: '',
@@ -43,7 +43,7 @@ export default function Dashboard() {
 		userPerformanceTemplate
 	)
 
-	useEffect(getAllData, [])
+	useEffect(getAllData, [userId])
 
 	function getAllData() {
 		const userService = new UserService()
