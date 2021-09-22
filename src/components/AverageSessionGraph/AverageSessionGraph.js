@@ -52,6 +52,7 @@ export default function AverageSessionGraph({ data }) {
 					stroke="white"
 					unit="min"
 					dot={false}
+					strokeWidth={2}
 				/>
 			</LineChart>
 		</div>
