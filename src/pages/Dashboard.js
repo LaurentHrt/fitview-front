@@ -45,6 +45,9 @@ export default function Dashboard() {
 
 	useEffect(getAllData, [userId])
 
+	/**
+	 * @description This function collect all the data from the backend API and update each local state
+	 */
 	function getAllData() {
 		const userService = new UserService()
 		userService.getUserInfo(userId).then((data) => updateUserInfo(data))
