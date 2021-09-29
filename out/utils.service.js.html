@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: utils.service.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,34 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: utils.service.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @description This class provides a set of utils methods like display an error message...
+ */
+class UtilsService {
+	#errorMessage =
+		"Nous n'avons pas pu nous connecter au serveur. Merci de rééssayer ultérieurement"
 
+	/**
+	 * @description display an error message for the user
+	 */
+	displayErrorMessage() {
+		window.alert(this.#errorMessage)
+	}
+}
 
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+export default UtilsService
+</code></pre>
+        </article>
+    </section>
 
 
 
