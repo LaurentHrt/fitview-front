@@ -3,8 +3,6 @@ import './PerformanceGraph.css'
 import PropTypes from 'prop-types'
 
 export default function PerformanceGraph({ data: { data, kind } }) {
-	data = data.map((entry) => ({ value: entry.value, kind: kind[entry.kind] }))
-
 	return data.length > 0 ? (
 		<div className="performanceGraph">
 			<RadarChart outerRadius={90} data={data} width={260} height={260}>

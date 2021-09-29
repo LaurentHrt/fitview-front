@@ -5,12 +5,6 @@ import PropTypes from 'prop-types'
 const axisTextStyle = { fontWeight: 'bold', fontSize: '12px' }
 
 export default function AverageSessionGraph({ data }) {
-	const days = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' }
-	data = data.map((entry) => ({
-		day: days[entry.day],
-		sessionLength: entry.sessionLength,
-	}))
-
 	return (
 		<div className="sessionGraph">
 			<div className="sessionGraph__title">
