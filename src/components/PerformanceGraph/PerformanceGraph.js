@@ -3,7 +3,7 @@ import './PerformanceGraph.css'
 import PropTypes from 'prop-types'
 
 export default function PerformanceGraph({ data: { data, kind } }) {
-	return data.length > 0 ? (
+	return (
 		<div className="performanceGraph">
 			<RadarChart outerRadius={90} data={data} width={260} height={260}>
 				<PolarGrid />
@@ -20,7 +20,7 @@ export default function PerformanceGraph({ data: { data, kind } }) {
 				/>
 			</RadarChart>
 		</div>
-	) : null
+	)
 }
 
 PerformanceGraph.propTypes = {

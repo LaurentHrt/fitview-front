@@ -16,32 +16,11 @@ import './Dashboard.css'
 
 export default function Dashboard() {
 	const userId = process.env.REACT_APP_USERID
-	const userInfoTemplate = {
-		userInfos: {
-			firstName: '',
-			lastName: '',
-			age: 0,
-		},
-		todayScore: 0,
-		keyData: {
-			calorieCount: 0,
-			proteinCount: 0,
-			carbohydrateCount: 0,
-			lipidCount: 0,
-		},
-	}
-	const userActivityTemplate = { sessions: [] }
-	const userAverageSessionTemplate = { sessions: [] }
-	const userPerformanceTemplate = { kind: {}, data: [] }
 
-	const [userInfo, updateUserInfo] = useState(userInfoTemplate)
-	const [userActivity, updateUserActivity] = useState(userActivityTemplate)
-	const [userAverageSession, updateUserAverageSession] = useState(
-		userAverageSessionTemplate
-	)
-	const [userPerfomance, updateUserPerfomance] = useState(
-		userPerformanceTemplate
-	)
+	const [userInfo, updateUserInfo] = useState({})
+	const [userActivity, updateUserActivity] = useState({})
+	const [userAverageSession, updateUserAverageSession] = useState({})
+	const [userPerfomance, updateUserPerfomance] = useState({})
 
 	useEffect(getAllData, [userId])
 
@@ -54,15 +33,12 @@ export default function Dashboard() {
 		userService
 			.getUserActivity(userId)
 			.then((data) => updateUserActivity(data))
-			.catch((e) => console.log(e))
 		userService
 			.getUserAverageSession(userId)
 			.then((data) => updateUserAverageSession(data))
-			.catch((e) => console.log(e))
 		userService
 			.getUserPerformance(userId)
 			.then((data) => updateUserPerfomance(data))
-			.catch((e) => console.log(e))
 	}
 
 	return (
@@ -71,48 +47,48 @@ export default function Dashboard() {
 			<NavBar />
 			<main>
 				<div>
-					<Welcome userName={userInfo.userInfos.firstName} />
+					<Welcome userName={userInfo?.userInfos?.firstName} />
 				</div>
 				<div className="graphContainer">
 					<div className="container">
 						<div className="activity">
-							<ActivityGraph data={userActivity.sessions} />
+							<ActivityGraph data={userActivity?.sessions} />
 						</div>
 						<div className="average">
 							<AverageSessionGraph
-								data={userAverageSession.sessions}
+								data={userAverageSession?.sessions}
 							/>
 						</div>
 						<div className="performance">
 							<PerformanceGraph data={userPerfomance} />
 						</div>
 						<div className="score">
-							<ScoreGraph value={userInfo.todayScore} />
+							<ScoreGraph value={userInfo?.todayScore} />
 						</div>
 					</div>
 					<div className="cardsContainer">
 						<NutrimentCard
 							image={caloriesIcon}
 							title="Calories"
-							value={userInfo.keyData.calorieCount}
+							value={userInfo?.keyData?.calorieCount}
 							unit="kCal"
 						/>
 						<NutrimentCard
 							image={proteinIcon}
 							title="Proteines"
-							value={userInfo.keyData.proteinCount}
+							value={userInfo?.keyData?.proteinCount}
 							unit="g"
 						/>
 						<NutrimentCard
 							image={carbsIcon}
 							title="Glucides"
-							value={userInfo.keyData.carbohydrateCount}
+							value={userInfo?.keyData?.carbohydrateCount}
 							unit="g"
 						/>
 						<NutrimentCard
 							image={fatIcon}
 							title="Lipides"
-							value={userInfo.keyData.lipidCount}
+							value={userInfo?.keyData?.lipidCount}
 							unit="g"
 						/>
 					</div>
