@@ -8,11 +8,11 @@ This repo contains all the source code to run the sports analytics dashboard Fit
 
 -   [NodeJS (**version 12.18**)](https://nodejs.org/en/)
 -   [Yarn](https://yarnpkg.com/)
--   Backend API up and running. Follow the installation instructions here : [fitview-backend](https://github.com/LaurentHrt/fitview-backend)
+-   Backend API up and running. Follow the installation instructions here : [fitview-back](https://github.com/LaurentHrt/fitview-back)
 
 ## Installation
 
--   First, follow the installation instruction of the [fitview-backend](https://github.com/LaurentHrt/fitview-backend) repository to install and run the backend API. Then comme back here
+-   First, follow the installation instruction of the [fitview-back](https://github.com/LaurentHrt/fitview-back) repository to install and run the backend API. Then comme back here
 -   Clone this repository
 -   Run `yarn install`
 
